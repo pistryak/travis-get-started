@@ -5,14 +5,14 @@ import spock.lang.Specification
 class AccountSpec extends Specification {
     def "Withdraw"() {
         given:
-        def account = new Account(5)
+        def account = new Account(10)
 
         account.metaClass.minus = account.&withdraw
 
         when:
-        account - 3
+        account - 7
 
         then:
-        account.balance == 2
+        account.balance == 3
     }
 }
